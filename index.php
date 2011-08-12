@@ -29,7 +29,6 @@ require_once("config/functions.inc.php");
 </head>
 <body>
    <div class="container">
-      
       <?php include("header.inc.php")?>
 
       <table cellpadding=5 cellspacing=2>
