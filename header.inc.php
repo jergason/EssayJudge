@@ -33,15 +33,15 @@
       <center>
       <div style="padding:5px;margin-left:16px;margin-right:16px;background: url(/images/menubot.jpg) 0 100% no-repeat;">
          <div class="navbar"></div>
-         <div class="navbar" onclick="document.location.href='http://www.EssayJudge.com/';">Home</div>
-         <div class="navbar" onclick="document.location.href='http://www.EssayJudge.com/search_result.php';">Browse All</div>
+         <div class="navbar"><a href="<?php echo(SITE_URL); ?>">Home</a></div>
+         <div class="navbar"><a href="search_result.php">Browse All</a></div>
          <?php if($logged_in){?>
-         <div class="navbar" onclick="document.location.href='http://www.EssayJudge.com/add_document.php';">Submit Essay</div>
-         <div class="navbar" onclick="document.location.href='http://www.EssayJudge.com/my_account.php';">My Account</div>
-         <div class="navbar" onclick="document.location.href='http://www.EssayJudge.com/logout.php';">Logout</div>
+         <div class="navbar"><a href="add_document.php">Submit Essay</a></div>
+         <div class="navbar"><a href="my_account.php">My Account</a></div>
+         <div class="navbar"><a href="logout.php">Logout</a></div>
          <?php }else{?>
-         <div class="navbar" onclick="document.location.href='http://www.EssayJudge.com/register.php';">Sign Up</div>
-         <div class="navbar" onclick="document.location.href='http://www.EssayJudge.com/login.php';">Login</div>
+         <div class="navbar"><a href="register.php">Sign Up</a></div>
+         <div class="navbar"><a href="login.php">Login</a></div>
          <?php }?>
       </div>
 <br>
