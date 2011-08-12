@@ -25,7 +25,7 @@ $res_new_doc=mysql_query("select id,doc_title,posted_by,date_format(post_date,'%
 while($line_new_doc=mysql_fetch_array($res_new_doc))
 {
 ?>
-<div style="border-bottom:1px #CCCCCC solid;width:130px;line-height:18px;margin-top:4px;padding-bottom:2px;"><a href="document_detail.php?doc_id=<?=$line_new_doc['id']?>"  style="font-size:12px;font-weight:normal;text-decoration:none;"><?php echo ucwords($line_new_doc['doc_title']);?></a>
+<div style="border-bottom:1px #CCCCCC solid;width:130px;line-height:18px;margin-top:4px;padding-bottom:2px;"><a href="document_detail.php?doc_id=<?=$line_new_doc['id']?>"  style="font-size:12px;font-weight:normal;text-decoration:none;"><?php echo htmlentities(ucwords($line_new_doc['doc_title']));?></a>
 <br><center><i><?php echo $line_new_doc['post_date'];?></i></center></div>
 <?php }
 
