@@ -15,7 +15,7 @@ if(stripos($_SERVER['HTTP_HOST'], "localhost") !== -1 || $_SERVER['HTTP_HOST']==
 	define('DBNAME',"essayjudge");
 	define('DBUSER',"essayjudge");
 	define('DBPASS',"essayjudge");
-	define('SITE_URL',"http://localhost/gallery");
+	define('SITE_URL',"http://localhost:8888/essayjudge");
 	define('SITE_FS_PATH',"/Applications/MAMP/htdocs/essayjudge");
 	define('SITE_PATH',"http://localhost:8888/essayjudge");
 } else {
