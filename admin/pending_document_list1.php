@@ -26,41 +26,41 @@ $reccnt=mysql_num_rows(executeQuery("select tbl_document.*,tbl_user.username fro
 
 function checkall(objForm)
 {
-	len = objForm.elements.length;
-	var i=0;
-	for( i=0 ; i<len ; i++){
-		if (objForm.elements[i].type=='checkbox') 
-			objForm.elements[i].checked=objForm.check_all.checked;
-	}
+  len = objForm.elements.length;
+  var i=0;
+  for( i=0 ; i<len ; i++){
+    if (objForm.elements[i].type=='checkbox') 
+      objForm.elements[i].checked=objForm.check_all.checked;
+  }
 }
 
 function del_prompt(frmobj,comb,user_id)
 {
-	if(comb=='Delete'){
-		if(confirm ("Are you sure you want to delete Record(s)")){
-			frmobj.action = "pending_document_del.php";
-			frmobj.submit();
-		}
-		else{ 
-			return false;
-		}
-	}
-	else if(comb=='Pending'){
-		frmobj.action = "pending_document_dele.php";
-		frmobj.submit();
-	}
-	else if(comb=='Approve'){
-		frmobj.action = "pending_document_dele.php";
-		frmobj.submit();
-	}
-	else if(comb=='Feature'){
-		frmobj.action = "pending_document_dele.php";
-		frmobj.submit();
-	}
-	else if(comb=='Remove Feature'){
-		frmobj.action = "pending_document_dele.php";
-		frmobj.submit();
-	}
+  if(comb=='Delete'){
+    if(confirm ("Are you sure you want to delete Record(s)")){
+      frmobj.action = "pending_document_del.php";
+      frmobj.submit();
+    }
+    else{ 
+      return false;
+    }
+  }
+  else if(comb=='Pending'){
+    frmobj.action = "pending_document_del.php";
+    frmobj.submit();
+  }
+  else if(comb=='Approve'){
+    frmobj.action = "pending_document_del.php";
+    frmobj.submit();
+  }
+  else if(comb=='Feature'){
+    frmobj.action = "pending_document_del.php";
+    frmobj.submit();
+  }
+  else if(comb=='Remove Feature'){
+    frmobj.action = "pending_document_del.php";
+    frmobj.submit();
+  }
 }
 
 </script>
@@ -83,87 +83,87 @@ function del_prompt(frmobj,comb,user_id)
     <td width="1" bgcolor="#045972"><img src="images/spacer.gif" width="1" height="1" /></td>
     <td width="1"><img src="images/spacer.gif" width="1" height="1" /></td>
     <td height="400" align="center" valign="top">
-	<!-- Center Part Begins Here  -->
-		<table width="100%"  border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+  <!-- Center Part Begins Here  -->
+    <table width="100%"  border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
           <tr>
             <td height="21" align="left" bgcolor="#EDEDED" class="txt">
-				<table width="98%"  border="0" align="center" cellpadding="0" cellspacing="0">
+        <table width="98%"  border="0" align="center" cellpadding="0" cellspacing="0">
                     <tr>
                       <td width="76%"><span class="title"><strong><img src="images/heading_icon.gif" width="16" height="16" hspace="5">Uploaded Documents</strong></span></td>
                       <td width="24%" align="right"></td>
                     </tr>
                 </table>
-			</td>
+      </td>
           </tr>
           <tr>
             <td height="400" align="center" valign="top" bgcolor="#FFFFFF"><br>
               <table width="98%" height="200" border="0" cellpadding="5" cellspacing="0">
                 <tr>
                   <td height="347" align="center" valign="top" bgcolor="#FFFFFF">
-				   
-				  
-				  <BR>
-				  <span class="warning"><?php print $_SESSION['sess_msg']; session_unregister('sess_msg'); $sess_msg='';?></span>
-				  <form name="frm_del" method="post" >
-				  <table width="98%" border="0" cellspacing="1" cellpadding="4" align=center  bgcolor="#D8D8D8">
-				  <?php if($reccnt>0){?>
-				  	<tr bgcolor="#4096AF" class="bigWhite">
-					  <TD width="8%" align="center" bgcolor="#4096AF"><strong>S.No. </strong></TD>
-					  <TD width="23%" align="center" bgcolor="#4096AF"><strong>Title</strong></TD>
-					  <TD width="23%" align="center" bgcolor="#4096AF"><strong>Uploaded By(username)</strong></TD>
-					  <TD width="23%" align="center" bgcolor="#4096AF"><strong>View Document</strong></TD>
-					  <TD width="12%" align="center"><strong>Status </strong></TD>
-					  <!--td width="9%" align="center" ><strong>Actions</strong></td-->
-					  <td width="7%" align="center" class="heading"> 
-					  <input name="check_all" type="checkbox" id="check_all" value="check_all" onClick="checkall(this.form)">
-					  </td>
-					</tr>
-					<?php $i=0;
-					while($line=mysql_fetch_array($sql)){
-					$className = ($className == "evenRow")?"oddRow":"evenRow";
-					$i++;?>
-					<tr class="<?php print $className?>"> 
-					  <TD align="center" class="txt" ><?php print $i?>.</TD>
-					  <TD align="center" class="txt" ><a  class="orangetxt" href="<?=SITE_PATH?>/document_detail.php?doc_id=<?=$line['id']?>" target="_blank" ></a><?=ucfirst($line['doc_title'])?></a><?php if($line[feature]==1){?><span class="warning">*</span><?php }?><?php if($line[status]==1){?><span class="warning">~</span><?php }?></TD>
-					  <TD align="center" class="txt" ><?php echo $line['username'];?></TD>
-					 <TD align="center" class="txt" ><a href="document_addf.php?id1=<?php echo $line[id]?>" class="orangetxt" >EDIT</a></TD>
-					<TD align="center" class="txt"><? if($line[status]==1){?>Approved<? }else{?>Pending<? }?></TD>
-					  <!--td width="9%" valign="middle" align="center"><a href="document_addf.php?id=<?php print $line[0]?>&user_id=<?=$_GET[user_id]?>" class="orangetxt">Edit</a><br />
-					<a href="comment_list.php?document_id=<?=$line[id]?>&user_id=<?=$_GET[user_id]?>" class="orangetxt">View Comments</a>
-					</td-->
-					  <td width="7%" valign="middle" align="center"><input type="checkbox" name="ids[]" value="<?php print $line[0]?>"></td>
-					</tr>
-					<?php }?>
-					<?php $className = ($className == "evenRow")?"oddRow":"evenRow";?>
-					<tr align="right" class="<?php print $className?>"> 
-					  <td colspan="8"><table width="100%"  border="0" cellspacing="0" cellpadding="0">
-					    <tr>
-							<td width="50%"  align="center"><?php include("../config/paging.inc.php"); ?></td>
+
+
+          <BR>
+          <span class="warning"><?php print $_SESSION['sess_msg']; session_unregister('sess_msg'); $sess_msg='';?></span>
+          <form name="frm_del" method="post" action="pending_document_del.php">
+          <table width="98%" border="0" cellspacing="1" cellpadding="4" align=center  bgcolor="#D8D8D8">
+          <?php if($reccnt>0){?>
+            <tr bgcolor="#4096AF" class="bigWhite">
+            <TD width="8%" align="center" bgcolor="#4096AF"><strong>S.No. </strong></TD>
+            <TD width="23%" align="center" bgcolor="#4096AF"><strong>Title</strong></TD>
+            <TD width="23%" align="center" bgcolor="#4096AF"><strong>Uploaded By(username)</strong></TD>
+            <TD width="23%" align="center" bgcolor="#4096AF"><strong>View Document</strong></TD>
+            <TD width="12%" align="center"><strong>Status </strong></TD>
+            <!--td width="9%" align="center" ><strong>Actions</strong></td-->
+            <td width="7%" align="center" class="heading"> 
+            <input name="check_all" type="checkbox" id="check_all" value="check_all" onClick="checkall(this.form)">
+            </td>
+          </tr>
+<?php $i=0;
+while($line=mysql_fetch_array($sql)){
+  $className = ($className == "evenRow")?"oddRow":"evenRow";
+  $i++;?>
+          <tr class="<?php print $className?>"> 
+            <TD align="center" class="txt" ><?php print $i?>.</TD>
+            <TD align="center" class="txt" ><a  class="orangetxt" href="<?=SITE_PATH?>/document_detail.php?doc_id=<?=$line['id']?>" target="_blank" ></a><?=ucfirst($line['doc_title'])?></a><?php if($line[feature]==1){?><span class="warning">*</span><?php }?><?php if($line[status]==1){?><span class="warning">~</span><?php }?></TD>
+            <TD align="center" class="txt" ><?php echo $line['username'];?></TD>
+           <TD align="center" class="txt" ><a href="document_addf.php?id1=<?php echo $line[id]?>" class="orangetxt" >EDIT</a></TD>
+          <TD align="center" class="txt"><? if($line[status]==1){?>Approved<? }else{?>Pending<? }?></TD>
+            <!--td width="9%" valign="middle" align="center"><a href="document_addf.php?id=<?php print $line[0]?>&user_id=<?=$_GET[user_id]?>" class="orangetxt">Edit</a><br />
+          <a href="comment_list.php?document_id=<?=$line[id]?>&user_id=<?=$_GET[user_id]?>" class="orangetxt">View Comments</a>
+          </td-->
+            <td width="7%" valign="middle" align="center"><input type="checkbox" name="ids[]" value="<?php print $line[0]?>"></td>
+          </tr>
+          <?php }?>
+          <?php $className = ($className == "evenRow")?"oddRow":"evenRow";?>
+          <tr align="right" class="<?php print $className?>"> 
+            <td colspan="8"><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+              <tr>
+              <td width="50%"  align="center"><?php include("../config/paging.inc.php"); ?></td>
                             <td align="right">
-							<input type="submit" name="Submit" value="Approve" class="button" onclick="return del_prompt(this.form,this.value)">
-							<input type="submit" name="Submit" value="Delete" class="button" onclick="return del_prompt(this.form,this.value)">
-							<input type="submit" name="Submit" value="Feature" class="button" onclick="return del_prompt(this.form,this.value)">
-							<input type="submit" name="Submit" value="Remove Feature" class="button" onclick="return del_prompt(this.form,this.value)">
-							<br />
-							</td>
-					    </tr>
+              <input type="submit" name="Submit" value="Approve" class="button" onclick="return del_prompt(this.form,this.value)">
+              <input type="submit" name="Submit" value="Delete" class="button" onclick="return del_prompt(this.form,this.value)">
+              <input type="submit" name="Submit" value="Feature" class="button" onclick="return del_prompt(this.form,this.value)">
+              <input type="submit" name="Submit" value="Remove Feature" class="button" onclick="return del_prompt(this.form,this.value)">
+              <br />
+              </td>
+              </tr>
                       </table></td>
-					</tr>
-					<tr>
-					<td class="txt">Feature-<span class="warning">*</span><br />
-						Approve-<span class="warning">*</span>
-					</td>
-					</tr>
-			     <?php }else{?>
-				    <tr align="center" class="oddRow">
-					  <td colspan="8" class="warning">Sorry, Currently there are no Records to display.</td>
-					</tr>
-				 <?php }?>
-			     </table>
-				 </form>
-				 <br></td>
-			   </tr>
-			   <tr align="center">
+          </tr>
+          <tr>
+          <td class="txt">Feature-<span class="warning">*</span><br />
+            Approve-<span class="warning">*</span>
+          </td>
+          </tr>
+           <?php }else{?>
+            <tr align="center" class="oddRow">
+            <td colspan="8" class="warning">Sorry, Currently there are no Records to display.</td>
+          </tr>
+         <?php }?>
+           </table>
+         </form>
+         <br></td>
+         </tr>
+         <tr align="center">
                  <td>&nbsp;</td>
                </tr>
                <tr align="center">
@@ -173,8 +173,8 @@ function del_prompt(frmobj,comb,user_id)
          </td>
        </tr>
      </table>
-	<!-- Center Part Ends Here  -->
-	</td>
+  <!-- Center Part Ends Here  -->
+  </td>
     <td width="20" valign="top" bgcolor="#EDEDED">&nbsp;</td>
   </tr>
 </table>
