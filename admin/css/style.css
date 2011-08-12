@@ -1,0 +1,94 @@
+/* CSS Document */
+body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+}
+.padding5px {
+	text-align:justify;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #606060;
+}
+.txt {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #606060;
+}
+.txtfld{
+border:1px solid #4196AF;
+}
+.bigWhite{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #ffffff;
+}
+.menuLinks {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #146982;
+	text-decoration:none;
+}
+a.menuLinks {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #146982;
+	text-decoration:none;
+}
+.menuLinks:hover {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #146982;
+	text-decoration:underline;
+}
+.warning {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #FF0000;
+}
+.orangetxt {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #F06E07;
+	text-decoration:none;
+}
+a.orangetxt {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #F06E07;
+	text-decoration:none;
+}
+a.orangetxt:hover {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #F06E07;
+	text-decoration:underline;
+}
+.title {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #606060;
+	font-weight:bold;
+}
+.heading {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #606060;
+	font-weight:bold;
+}
+.oddRow {
+background-color: #F6F6F6;
+}
+.evenRow {
+background-color: #FFFFFF;
+} 
+form{
+margin:0;
+padding:0;
+}
+.button{
+font:11px arial;
+background:#fff;
+border:1px solid #000;
+}

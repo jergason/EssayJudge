@@ -1,0 +1,28 @@
+# -FrontPage-
+
+IndexIgnore .htaccess */.??* *~ *# */HEADER* */README* */_vti*
+
+RewriteEngine on
+
+RewriteRule ^scripts/out.php$ index.php?lnk=redirect [L,QSA]
+
+RewriteRule ^randomreviews.php$ randomreviews.php [L]
+RewriteRule ^randomcomments.php$ randomcomments.php [L]
+RewriteRule ^image.php$ image.php [L]
+RewriteRule ^([a-zA-Z0-9_]+).css$ $1.css [L]
+RewriteRule ^pics(.*)$ pics$1 [L]
+RewriteRule ^img(.*)$ img$1 [L]
+RewriteRule ^images(.*)$ images$1 [L]
+RewriteRule ^tiny_mce(.*)$ tiny_mce$1 [L]
+
+RewriteRule ^admin/([a-zA-Z0-9\.]+)$ admin/$1 [L]
+RewriteRule ^admin(.*)$ admin/index.php [L]
+
+RewriteRule ^forum/([a-zA-Z0-9\-\_\.\/]+)$ forum/$1 [L]
+RewriteRule ^forum(.*)$ forum/index.php [L]
+
+RewriteCond %{HTTP_HOST} ^(www\.)?essayjudge\.com
+RewriteRule .* - [L]
+
+RewriteRule ^(.*)$ index.php?lnk=$1 [QSA]
+

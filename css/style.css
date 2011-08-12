@@ -1,0 +1,111 @@
+.blue_txt {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #1174C9;
+}
+.large_blue_txt {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 20px;
+	color: #1174C9;
+}
+.black_txt {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #000000;
+}
+.big_black_txt {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #000000;
+	font-weight:bold;
+}
+.orange_txt {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	color: #CC6600;
+}
+.large_black_txt {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 20px;
+	color: #000000;
+}
+a {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #1174C9;
+	text-decoration:underline;
+}
+a:hover {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #1174C9;
+	text-decoration:none;
+}
+.input_box {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #000000;
+	border: 1px solid #333333;
+}
+.warning {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #FF0000;
+}
+.bluerow
+{
+ background-color:#1173CA;
+}
+.big_white_txt
+{
+font:Arial, Helvetica, sans-serif;
+font-size:16px;
+color:#ffffff;
+font-weight:bold;
+}
+.whitelink
+{
+font:Arial, Helvetica, sans-serif;
+font-size:14px;
+color:#000000;
+text-decoration:underline;
+}
+.whitelink:hover
+{
+font:Arial, Helvetica, sans-serif;
+font-size:14px;
+color:#000000;
+text-decoration:none;
+}
+.greyrow
+{
+background-color: #F6F6F6;
+}
+.blacklink
+{
+font:Arial, Helvetica, sans-serif;
+font-size:12px;
+text-decoration:underline;
+color:#000000;
+}
+.blacklink:hover
+{
+font:Arial, Helvetica, sans-serif;
+font-size:12px;
+text-decoration:none;
+color:#000000;
+}
+.bluelink
+{
+font:Arial, Helvetica, sans-serif;
+font-size:12px;
+text-decoration:none;
+color:#1173CA;
+}
+.bluelink:hover
+{
+font:Arial, Helvetica, sans-serif;
+font-size:12px;
+text-decoration:underline;
+color:#1173CA;
+}
