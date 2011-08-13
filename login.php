@@ -5,7 +5,7 @@ if($_REQUEST['nid']){
   $update=mysql_query("update tbl_user set status=1 where id='".$_REQUEST['nid']."'");
 }
 if($_POST['submitForm'] == "yes") {
-  $sql = sprintf("SELECT ID, USERNAME FROM tbl_user WHERE username = '%s' AND password = '%s' AND status=1",
+  $sql = sprintf("SELECT id, username FROM tbl_user WHERE username = '%s' AND password = '%s' AND status=1",
     mysql_real_escape_string($_POST['username']), mysql_real_escape_string($_POST['password']));
   $sql_login=mysql_query($sql);
   $result=mysql_num_rows($sql_login);
