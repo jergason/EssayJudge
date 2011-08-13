@@ -4,7 +4,7 @@ require_once("../config/config.inc.php");
 // @extract($_POST);
 // Is this ghetto CSRF protection?
 if($_POST['logged'] == "yes"){
-  $sql = sprintf("select * from admin where username='%s' and password='%s' and status='1'",
+  $sql = sprintf("select * from admin where username='%s' and password='%s' and status=1",
     mysql_real_escape_string($_POST['username']), mysql_real_escape_string($_POST['password']));
   $rs = mysql_query($sql);
 
@@ -16,7 +16,7 @@ if($_POST['logged'] == "yes"){
     die();
   }
   else {
-    $_SESSION['sess_msg'] = $_POST['username'] . $_POST['password'];
+    $_SESSION['sess_msg'] = "Could not log in with that username and password. Please try again.";
     header("Location: index.php");
   }
 }
