@@ -87,14 +87,9 @@ a:active {color:#0000FF;text-decoration:underline;font-size:10px;font-weight: bo
 }
 
 .navbar a {
-   cursor: pointer;
-   /* text-decoration: none;*/
    color: #5C6A72;
    font-size: 14px;
    font-weight: bolder;
-   margin-left: 30px;
-   margin-right:5px;
-   display: inline;
 }
 
 .content {
