@@ -1,111 +1,124 @@
-.blue_txt {
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 12px;
-	color: #1174C9;
+::selection			{ background:#99173C; color:#000; /* Safari and Opera */ }
+::-moz-selection  { background:#99173C; color:#000; /* Firefox */ }
+
+@font-face {
+  font-family: 'Leckerli One';
+  font-style: normal;
+  font-weight: normal;
+  src: local('LeckerliOne'), url('http://themes.googleusercontent.com/static/fonts/leckerlione/v1/S2Y_iLrItTu8kIJTkS7DrKRDOzjiPcYnFooOUGCOsRk.woff') format('woff');
 }
-.large_blue_txt {
-	font-family: Arial, Helvetica, sans-serif;
+body {
+   background-color: #99173C;
+   font-family: "Lucida Grande", Arial, Helvetica;
+   font-size: 12px;
+
+}
+#subheading{
+	font-family: 'Leckerli One';
+	padding:10px;
+	text-align:center;
+	font-size:24px;
+	color:#2E2633;
+}
+#name{
+	color:#2E2633;
+	font-family: 'Leckerli One';
+  	font-size:72px;
+	padding:10px;
+	text-align:center;
+}
+a:link {color:#99173C;text-decoration:none;font-weight: bolder;}
+a:visited {color:#99173C;text-decoration:none;font-weight: bolder;}
+a:hover {color:#555152;text-decoration:none;font-weight: bolder;}
+a:active {color:#99173C;text-decoration:none;font-weight: bolder;}
+
+#navigation a, #footer a{color:#DCE9BE;text-decoration:none;font-weight: bolder;}
+#navigation a:hover, #footer a:hover {color:#EFFFCD;text-decoration:none;font-weight: bolder;}
+
+
+.container {
+   margin-right: auto;
+   margin-left: auto;
+   margin-bottom: 20px;
+   background-color: #EFFFCD;
+   width: 1000px;
+   min-height: 300px;
+   padding:50px;
+-webkit-border-radius: 10px;
+-moz-border-radius: 10px;
+border-radius: 10px;
+}
+#navigation, #footer{
+	margin-left:auto;
+	margin-right:auto;
+	background-color:#555152;
+	padding:30px;
+   -webkit-border-radius: 20px;
+   -moz-border-radius: 20px; 
+   border-radius: 20px;
+	margin-bottom:30px;
+	color:#DCE9BE;
+
+}
+#sidebar{
+	float:right;
+	width:300px;
+	background-color:#DCE9BE;
+	padding:30px;
+   -webkit-border-radius: 30px;
+   -moz-border-radius: 30px; 
+   border-radius: 30px;
+	
+}
+#topdoc{
+	font-size:30px;
+	font-family: "Leckerli One", Helvetica, Arial;
+	color:#232323;
+}
+#main{
+	width:590px;
+	padding:40px 30px;
+	font-size:13px;
+}
+#button{
+	border: solid 6px #2E2633;
+	padding:24px;
+	font-size:24px;
+   -webkit-border-radius: 30px;
+   -moz-border-radius: 30px; 
+   border-radius: 30px;
+background-image: -webkit-gradient(
+    linear,
+    left bottom,
+    left top,
+    color-stop(0.16, rgb(87,14,36)),
+    color-stop(0.58, rgb(153,23,60))
+);
+background-image: -moz-linear-gradient(
+    center bottom,
+    rgb(87,14,36) 16%,
+    rgb(153,23,60) 58%
+);
+	margin: 40px 202px;
+}
+#button a{
+	color:#DCE9BE;
+	font-family:Helvetica, Arial;
 	font-size: 20px;
-	color: #1174C9;
 }
-.black_txt {
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 12px;
-	color: #000000;
+.navbar {
+   cursor: pointer;
+   text-decoration: none;
+   font-size: 18px;
+   font-weight: bolder;
+   padding:10px;
+   margin:20px;
+   display: inline;
 }
-.big_black_txt {
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 12px;
-	color: #000000;
-	font-weight:bold;
-}
-.orange_txt {
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 14px;
-	color: #CC6600;
-}
-.large_black_txt {
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 20px;
-	color: #000000;
-}
-a {
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 12px;
-	color: #1174C9;
-	text-decoration:underline;
-}
-a:hover {
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 12px;
-	color: #1174C9;
-	text-decoration:none;
-}
-.input_box {
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 12px;
-	color: #000000;
-	border: 1px solid #333333;
-}
-.warning {
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 11px;
-	color: #FF0000;
-}
-.bluerow
-{
- background-color:#1173CA;
-}
-.big_white_txt
-{
-font:Arial, Helvetica, sans-serif;
-font-size:16px;
-color:#ffffff;
-font-weight:bold;
-}
-.whitelink
-{
-font:Arial, Helvetica, sans-serif;
-font-size:14px;
-color:#000000;
-text-decoration:underline;
-}
-.whitelink:hover
-{
-font:Arial, Helvetica, sans-serif;
-font-size:14px;
-color:#000000;
-text-decoration:none;
-}
-.greyrow
-{
-background-color: #F6F6F6;
-}
-.blacklink
-{
-font:Arial, Helvetica, sans-serif;
-font-size:12px;
-text-decoration:underline;
-color:#000000;
-}
-.blacklink:hover
-{
-font:Arial, Helvetica, sans-serif;
-font-size:12px;
-text-decoration:none;
-color:#000000;
-}
-.bluelink
-{
-font:Arial, Helvetica, sans-serif;
-font-size:12px;
-text-decoration:none;
-color:#1173CA;
-}
-.bluelink:hover
-{
-font:Arial, Helvetica, sans-serif;
-font-size:12px;
-text-decoration:underline;
-color:#1173CA;
+
+.content {
+   margin-top: 20px;
+   margin-right: auto;
+   margin-left: auto;
+   width: 100%;
 }
