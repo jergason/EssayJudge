@@ -343,7 +343,7 @@ if($status!=1)
 {
 ?>
 	Phrase (Case Sensitive)
-     <input style="float:left" name="security_code" type="text" size="6" maxlength="20" class="input_box" >&nbsp;&nbsp;&nbsp;&nbsp;<img src="image.php?PHPSESSID=<?=$ssid?>" alt="Security Code" align="absmiddle" title="Security Code">
+     <input style="float:left" name="security_code" type="text" size="7" maxlength="20" class="input_box" >&nbsp;&nbsp;&nbsp;&nbsp;<img src="image.php?PHPSESSID=<?=$ssid?>" alt="Security Code" align="absmiddle" title="Security Code">
 	<br>
            <?php }?>
           
