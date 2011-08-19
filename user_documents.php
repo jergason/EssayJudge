@@ -28,10 +28,10 @@ $sql_del=mysql_query("delete from tbl_document where id='".$_REQUEST['doc_id']."
    <div class="container">
       <?php include("header.inc.php")?>
 
-            <div style="border: 1px #999999 solid;margin-top:14px;margin-bottom:14px;width:602px">
-				   <table style="padding:10px;width:600px;border-spacing:0px;color:#5C6A72;">
+            <div id="main">
+				   <table style="padding:10px;width:600px;border-spacing:0px;">
                <?php $get_user_name=mysql_fetch_array(mysql_query("select username from tbl_user where id=".$_GET[user_id]));?>
-               <tr><td style="text-align:left" valign=top><h3 style="line-height:18px;margin-left:20px;text-align:left"><?php echo ucfirst($get_user_name[0]);?>: Essays</h3></td><td align="right" class="blue_txt"></td></tr>
+               <tr><td style="text-align:left" valign=top><div id="subheading"><?php echo ucfirst($get_user_name[0]);?>: Essays</div></td><td align="right" class="blue_txt"></td></tr>
 												
 						<?php 
 $start=0;
@@ -51,7 +51,7 @@ $myResult=mysql_query("select tbl_document.id,tbl_document.doc_title as doctitle
 							$bgcolor=="#D6EAF3"?$bgcolor="#ffffff":$bgcolor="#D6EAF3";
 							?>
 							
-							<tr style="background:<?=$bgcolor?>;">
+							<tr>
 							<td colspan=2 style="padding:10px">
 							<a href="document_detail.php?doc_id=<?=$line[id]?>" style="font-size:12px"><?php echo $line[doc_title];?></a><br>
                      <div style="float:left;width:220px;">
@@ -85,7 +85,7 @@ $myResult=mysql_query("select tbl_document.id,tbl_document.doc_title as doctitle
 							{
 						?>
 						<tr align="center">
-						<td class="warning">No essays for this User</td>
+						<td class="warning">no essays for this user</td>
 						</tr>
 						<?php }?>
 						

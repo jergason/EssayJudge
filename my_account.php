@@ -142,45 +142,33 @@ _gaq.push(['_trackPageview']);
    <div class="container">
 
       <?php include("header.inc.php")?>
-
-      <div style="margin-top:15px;">
-            <div style="border: 1px #999999 solid;margin-top:14px;margin-left:10px;width:182px;height:400px;float:left">
-        <table style="padding:10px;width:180px;height:100%;border-spacing:0px;">
-               <tr><td style="background-color:#D6EAF3;" class="black_txt">
+	<div id="sidebar">
                <?php $get_user_name=mysql_fetch_array(mysql_query("select username from tbl_user where id=".$_SESSION[uid]))?>
-           <h3 style="color: #5C6A72;font-size:18px;font-weight:normal;padding-top:5px;text-align:left">Welcome <?php echo ucwords($get_user_name[0]);?></h3><br><br>
-<center><big>
-To post an essay for review, click<br>"Submit Essay"<br>
-<br><br><br>
-To see your review, click<br>"Latest Comments"
-</big><br><br><br>
+           <div id="topdoc">Welcome <?php echo ucwords($get_user_name[0]);?></div><br>
+To post an essay for review, click "Submit Essay"
+<br>
+To see your review, click "Latest Comments"
+<br>
 Your review will normally be posted in less than a day
-<br><br>
+<br>
+</div>
+<div id="main">
+	<div id="subheading">What to do now?</div>
+ <center><span style="color:red"><?php print $_SESSION['sess_msg']; session_unregister('sess_msg'); $sess_msg='';?></span><br/>
+
+<a href="add_document.php" alt="Add New Document" title="Submit New Document"><img src="icons/upload.png"><br>Add a new essay</a>
+
+<a href="user_latest_comment.php" alt="See The Latest Comments Posted On My Document" title="See Comments On My Essay"><img src="icons/comments.png"><br>Read My Comments</a>
+
+
+<a href="register.php" alt="Edit Profile" title="Edit My Profile"><img src="icons/user.png"><br>Edit My Profile</a>
+
+
+<a href="user_documents.php?user_id=<?=$_SESSION[uid]?>" alt="See My Documents" title="See My Documents"><img src="icons/view.png"><br>View My Documents</a>
 </center>
 
-
-               </td></tr>
-            </table>
-            </div>
-
-         <div style="margin-top:30px;float:left;">
-            <center><span style="color:red"><?php print $_SESSION['sess_msg']; session_unregister('sess_msg'); $sess_msg='';?></span><br/></center>
-
-<a href="add_document.php" alt="Add New Document" title="Submit New Document"><img src="images/adddoctest.jpg" style="clear:left;float:left;margin-left:50px;margin-right:10px;margin-bottom:10px;/*padding-left:20px;padding-bottom:20px;*/"></a>
-
-<a href="user_latest_comment.php" alt="See The Latest Comments Posted On My Document" title="See Comments On My Essay"><img src="images/seecomments.jpg" style="clear:left;float:left;margin-left:50px;margin-right:10px;margin-bottom:10px;/*padding-left:20px;padding-bottom:20px;*/"></a>
-
-
-<a href="register.php" alt="Edit Profile" title="Edit My Profile"><img src="images/editprofile.jpg" style="clear:left;float:left;margin-left:50px;margin-right:10px;margin-bottom:10px;/*padding-left:20px;padding-bottom:20px;*/"></a>
-
-
-
-<a href="user_documents.php?user_id=<?=$_SESSION[uid]?>" alt="See My Documents" title="See My Documents"><img src="images/seedocs.jpg" style="/*padding-left:20px;padding-bottom:20px;*/clear:left;float:left;margin-left:50px;margin-right:10px;margin-bottom:10px;"></a>
-
-         </div>
       </div>
-<br><br><br><br><br><br><br>
-      <div style="clear:left;position:relative;top:15px;background-color:#FFFFFF"><?php include("footer.inc.php")?></div>
+	<?php include("footer.inc.php")?>
    </div>
 </body>
 </html>

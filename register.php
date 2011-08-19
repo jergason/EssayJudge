@@ -202,47 +202,39 @@ _gaq.push(['_trackPageview']);
 
 </script>
 </head>
-
 <body>
 <div class="container">
    <?php include("header.inc.php")?>
 
          <form action="register.php" method="post" enctype="multipart/form-data" name="frm" onsubmit="return validForm(this)">
         <input type="hidden" name="SubmitForm" value="yes">
-         <div style="border: 1px #999999 solid;margin-top:14px;width:397px">
-        <table style="padding:10px;width:395px;border-spacing:0px;color:#5C6A72;">
-               <tr>
+         <div id="main">
 <?php
 if($status!=1) {
 ?>
-                  <td colspan=2 style="padding-bottom:15px;background: url(/images/menubot.jpg) 0 100% no-repeat;"><img src="images/register.gif" style="margin-left:10px;float:left"><h3 style="float:left;color: #5C6A72;font-size:18px;font-weight:normal;">Sign Up!</h3><?php print $_SESSION['sess_msg']; session_unregister('sess_msg'); $sess_msg='';?></td>
+                 <div id="subheading">Sign Up!</div><?php print $_SESSION['sess_msg']; session_unregister('sess_msg'); $sess_msg='';?></td>
 <?php }
 else
 {
 ?>
-                  <td colspan=2 style="padding-bottom:15px;background: url(/images/menubot.jpg) 0 100% no-repeat;"><img src="images/register.gif" style="margin-left:10px;float:left"><h3 style="float:left;color: #5C6A72;font-size:18px;font-weight:normal;">My Profile</h3><?php print $_SESSION['sess_msg']; session_unregister('sess_msg'); $sess_msg='';?></td>
+                  <td colspan=2 style="padding-bottom:15px;"><div id="subheadng;">My Profile</h3><?php print $_SESSION['sess_msg']; session_unregister('sess_msg'); $sess_msg='';?></td>
                <?php } ?>
-               </tr>
-           <tr>
-              <td width="30%"  align="left" style="padding-top:25px;background-color:#D6EAF3;" class="black_txt">User Name</td>
-              <td  align="left"width="70%" style="padding-top:25px;padding-left:5px;"><input type="text" size="33" class="input_box" name="username" value="<?=$username?>" <?php if($status==1){?>readonly<?php }?>><span class="orange_txt"></span>
-              </td>
-           </tr>
-           <tr>
-              <td width="30%"  align="left" style="padding-top:25px;background-color:#D6EAF3;"class="black_txt">Password</td>
-              <td  align="left"width="70%" style="padding-top:25px;padding-left:5px"><input type="password" size="33" class="input_box" name="password" value="<?=$password?>"><span class="orange_txt"></span>
-              </td>
-          </tr>
-          <tr>
-              <td width="30%"  align="left" style="background-color:#D6EAF3;" class="black_txt">Confirm Password</td>
-              <td  align="left"width="70%" style="padding-left:5px"><input type="password" size="33" class="input_box" name="cpassword" value="<?=$password?>"><span class="orange_txt"></span>
-              </td>
-          </tr>
-          <tr>
-              <td width="30%"  align="left" style="padding-top:25px;background-color:#D6EAF3;" class="black_txt">Email for password recovery</td>
-              <td  align="left"width="70%" style="padding-top:25px;padding-left:5px"><input type="text" size="33" class="input_box" name="email" value="<?=$email?>"><span class="orange_txt"></span>
-              </td>
-          </tr>
+			<br><br>
+              Username<br>
+			<input type="text" size="33" class="input_box" name="username" value="<?=$username?>" <?php if($status==1){?>readonly<?php }?>><span class="orange_txt"></span>
+             <br>
+<br>
+			Password<br>
+			<input type="password" size="33" class="input_box" name="password" value="<?=$password?>"><span class="orange_txt"></span>
+			<br>
+			Confirm Password<br>
+			<input type="password" size="33" class="input_box" name="cpassword" value="<?=$password?>"><span class="orange_txt"></span>
+              <br>
+<br>
+			Email (for password recovery)<br>
+			<input type="text" size="33" class="input_box" name="email" value="<?=$email?>"><span class="orange_txt"></span>
+			<br>
+			<br><br>
 <!--
           <tr>
               <td width="30%"  align="left" style="padding-top:25px;background-color:#D6EAF3;" class="black_txt">Birthday</td>
@@ -350,14 +342,12 @@ while($line_state=mysql_fetch_array($res_state))
 if($status!=1)
 {
 ?>
-                  <tr>
-                     <td width="30%"  align="left" style="padding-top:25px;background-color:#D6EAF3;" class="black_txt">Phrase (Case Sensitive)</td>
-                     <td  align="left"width="70%" style="padding-top:25px;padding-left:5px"><input style="float:left" name="security_code" type="text" size="6" maxlength="20" class="input_box" >&nbsp;&nbsp;&nbsp;&nbsp;<img src="image.php?PHPSESSID=<?=$ssid?>" alt="Security Code" align="absmiddle" title="Security Code"></td>
-                  </tr>
+	Phrase (Case Sensitive)
+     <input style="float:left" name="security_code" type="text" size="7" maxlength="20" class="input_box" >&nbsp;&nbsp;&nbsp;&nbsp;<img src="image.php?PHPSESSID=<?=$ssid?>" alt="Security Code" align="absmiddle" title="Security Code">
+	<br>
            <?php }?>
-           <tr><td style="padding-top:25px;background-color:#D6EAF3;"></td><td align="left"width="70%" style="padding-top:25px;padding-left:5px"><input type="submit" value="Submit"></td></tr>
-
-        </table>
+          
+		<input type="submit" value="Submit">
          </div>
          </form>
 <br>

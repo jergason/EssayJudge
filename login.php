@@ -76,9 +76,13 @@ _gaq.push(['_trackPageview']);
 <body>
    <div class="container">
       <?php include("header.inc.php")?>
-      <table class="content" style="margin-bottom:70px">
-         <tr>
-            <td>
+<div id="sidebar">
+<div id="topdoc">Help</div>
+<br>
+<a href="register.php">I want to sign up!</a><br /><br /><a href="lost_password.php">I forgot my password</a>
+</div>
+
+	<div id = "main">
                <!--<div style="float:right;margin-top:10px;margin-right:25px;"><?php include("welnewfea.inc.php")?></div>-->
                <form action="login.php" method="post" enctype="multipart/form-data" name="frm" onsubmit="return validate_form(this)">
                <input type="hidden" name="submitForm" value="yes">
@@ -86,23 +90,15 @@ _gaq.push(['_trackPageview']);
                <input type="hidden" name="referer" value="<?=$_SERVER['HTTP_REFERER']?>">
                <input type="hidden" name="back" value="<?php echo $_GET['back'];?>">
                <center><span style="color:red"><?php print $_SESSION['sess_msg']; session_unregister('sess_msg'); $sess_msg='';?></span><br/></center>
-               <table style="margin-right:auto;margin-left:auto/*20px*/;margin-top:14px;width:370px;border-spacing:10px;border: 1px #999999 solid;color:#5C6A72;">
-                  <tr>
-                     <td rowspan=2 style="background-color:#D6EAF3;padding:8px;">
-                        <h3 style="font-size:18px;font-weight:normal;text-align:left;margin-bottom:0px;margin-top:0px;">Login</h3><br />
-                        New User?<br /><a href="register.php">Sign Up!</a><br /><br /><a href="lost_password.php">I forgot my password</a>
-                     </td>
-                     <td>Username</td>
-                     <td><input type="text" name="username" size="17"  class="input_box"/></td>
-                  </tr>
-                  <tr>
-                     <td>Password</td>
-                     <td align=right><input type="password" name="password" size="17"  class="input_box"/><br/><input type="submit" value="Submit" style="margin-top:5px"/></td>
-                  </tr>
-               </table><br /><br /><br /><br />
-            </td>
-         </tr>
-      </table>
+
+<div id="subheading">Login</div><br />
+<center>
+                     Username:
+<input type="text" name="username" size="17"  class="input_box"/><br><br>
+				Password:
+				<input type="password" name="password" size="17"  class="input_box"/><br/><input type="submit" value="Submit" style="margin-top:5px"/>
+</div>
+</center>
       <?php include("footer.inc.php")?>
    </div>
 </body>

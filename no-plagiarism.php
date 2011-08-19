@@ -27,13 +27,9 @@ require_once("config/functions.inc.php");
    <div class="container">
       <?php include("header.inc.php")?>
 
-            <div style="border: 1px #999999 solid;margin-top:14px;margin-bottom:14px;width:602px">
-				   <table style="padding:10px;width:600px;border-spacing:0px;">
-						<tr>
-                     <td style="padding:10px" align=left>
-<center>
-<h2>EssayJudge.com has a Zero Tolerance for Plagiarism!</h2>
-</center>
+            <div id="main">
+<div id="subheading">EssayJudge.com has no tolerance for plagiarism!</div>
+<br>
 One of the fundamental flaws with posting your essay online to be reviewed is that someone can copy it and turn it in on their own.
 <br><br>
 <b>Students</b>, here are a few tips to help prove you are the author:
@@ -49,9 +45,6 @@ One of the fundamental flaws with posting your essay online to be reviewed is th
 <li>	If he doesn't remember his username/password, ask him to log in from home and add a message to the top of the essay.  If he can’t, he probably didn’t originally post the essay.
 </ul>
                
-                     </td>
-                  </tr>
-               </table>
             </div>
       <?php include("footer.inc.php")?>
    </div>
