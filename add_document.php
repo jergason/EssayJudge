@@ -125,8 +125,8 @@ function validForm(obj)
 				<input type="hidden" name="SubmitForm" value="yes">
 				<input type="hidden" name="doc_id" value="<?php echo $_REQUEST['doc_id']?>">	
             
-<div style="border: 1px #999999 solid;margin-top:14px;margin-bottom:25px;width:560px;">
-				<table cellpadding="4" style="padding:10px;width:540px;border-spacing:0px;color:#5C6A72;">
+<div id="main">
+				<table cellpadding="4" style="padding:10px;border-spacing:0px;">
 				<tr>
 <?
 
@@ -157,7 +157,7 @@ if($allow<$required){
 ?>
 
 
-<td style="padding-bottom:15px;background: url(/images/menubot.jpg) 0 100% no-repeat;"><img src="images/noadd.gif" style="margin-left:10px;float:left;margin-right:20px;"><h3 style="float:left;color: #5C6A72;font-size:18px;font-weight:normal;">Submit Essay</h3><?php /*print $_SESSION['sess_msg']; session_unregister('sess_msg');*/ $sess_msg='';?></td>
+<td style="padding-bottom:15px;"><div id="subheading">Submit Essay</div><?php /*print $_SESSION['sess_msg']; session_unregister('sess_msg');*/ $sess_msg='';?></td>
 				</tr>
 
 				<tr>
@@ -178,20 +178,20 @@ You have <? echo $comments ?> comment(s) and <? echo $essays ?> essay(s), so you
 
 
 <? }else{ ?>
-            <td colspan=2 style="padding-bottom:15px;background: url(/images/menubot.jpg) 0 100% no-repeat;"><img src="images/adddoc.gif" style="margin-left:10px;float:left;margin-right:20px;"><h3 style="float:left;color: #5C6A72;font-size:18px;font-weight:normal;">Submit Essay</h3><?php /*print $_SESSION['sess_msg']; session_unregister('sess_msg');*/ $sess_msg='';?></td>
+            <td colspan=2 style="padding-bottom:15px"><div id="subheading">Submit Essay</div><?php /*print $_SESSION['sess_msg']; session_unregister('sess_msg');*/ $sess_msg='';?></td>
 				</tr>
 
 
 
 
 				<tr>
-				<td width="200px"  align="right" class="black_txt" style="padding-top:25px;background-color:#D6EAF3;">Your Essay Title <span class="orange_txt"></span></td>
+				<td width="300px"  align="right" class="black_txt" style="padding-top:25px;">Your Essay Title <span class="orange_txt"></span></td>
 				<td  align="left" style="padding-top:25px"><input type="text" name="title" value="<?php echo ucwords($result_document['doc_title']);?>" size="58"   class="input_box">
 				</td>
 				</tr>
 				
 				<tr>
-				<td width="200px"  align="right" class="black_txt" style="background-color:#D6EAF3;">Copy &amp; Paste Essay<span class="orange_txt"></span></td>
+				<td width="300px"  align="right" class="black_txt">Copy &amp; Paste Essay<span class="orange_txt"></span></td>
 				<td  align="left"><textarea name="doc_content" rows="20" cols="60" class="input_box"><?php echo $result_document['doc_content'];?></textarea>
 				</td>
 				</tr><br><br>
@@ -209,7 +209,7 @@ You have <? echo $comments ?> comment(s) and <? echo $essays ?> essay(s), so you
 					{
 				?>
 				<?php }?>
-				<tr><td style="background-color:#D6EAF3;">&nbsp;</td><td align="left"><input type="submit" value="Submit"></td></tr>
+				<tr><td>&nbsp;</td><td align="left"><input type="submit" value="Submit"></td></tr>
 <? } ?>
 				</table>
          </div>

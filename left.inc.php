@@ -1,3 +1,4 @@
+//not used on new site
 <table width="100%"  border="0" align="center" cellpadding="0" cellspacing="0">
               <tr>
                       <td width="9" height="9" align="right" valign="top"><img src="images/box_left_upper.gif" width="9" height="9"></td>

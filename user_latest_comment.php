@@ -89,10 +89,10 @@ function close_form()
    <div class="container">
       <?php include("header.inc.php")?>
 
-            <div style="border: 1px #999999 solid;margin-top:14px;margin-bottom:14px;width:602px">
-				   <table style="padding:10px;width:600px;border-spacing:0px;color:#5C6A72;">
+            <div id="main">
+				   <table style="padding:10px;width:600px;border-spacing:0px;">
 						<tr><td align="left" valign=top>
-                  <h3 style="line-height: 18px;text-align:left;margin-left:20px;"><?php $get_user_name=mysql_fetch_array(mysql_query("select username from tbl_user where id=".$_SESSION[uid]));?>Comments on your<?php /*echo $get_user_name[0];*/?> Essays</h3></td><td align="right" class="blue_txt"></td>
+                  <div id="subheading"><?php $get_user_name=mysql_fetch_array(mysql_query("select username from tbl_user where id=".$_SESSION[uid]));?>Comments on your<?php /*echo $get_user_name[0];*/?> Essays</div></td><td align="right" class="blue_txt"></td>
                   </tr>
 						
 
@@ -117,7 +117,7 @@ tbl_comment.id,tbl_comment.comment,date_format(tbl_comment.comment_date,'%M %e, 
 								{
                         $bgcolor=="#D6EAF3"?$bgcolor="#ffffff":$bgcolor="#D6EAF3";
 						?>
-                     <tr style="background:<?=$bgcolor?>;">
+                     <tr>
 							<td colspan=2 style="padding:10px" class="black_txt">
                         <div style="float:left;width:250px">
                            <span class="bold">Essay:</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="document_detail.php?doc_id=<?php echo $line[doc_id]?>" style="font-size:12px"><?php echo $line[doc_title];?></a><br />
@@ -148,7 +148,7 @@ tbl_comment.id,tbl_comment.comment,date_format(tbl_comment.comment_date,'%M %e, 
 							{
                   ?>
 						<tr align="center">
-						<td class="warning">No Comments received for your Essays</td>
+						<td class="warning">no comments yet!</td>
 						</tr>
 						<?php }?>
 						
