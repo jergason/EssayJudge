@@ -26,11 +26,9 @@ require_once("config/functions.inc.php");
 <body>
    <div class="container">
       <?php include("header.inc.php")?>
-
-            <div style="border: 1px #999999 solid;margin-top:14px;margin-bottom:14px;width:602px">
-				   <table style="padding:10px;width:600px;border-spacing:0px;color:#5C6A72;">
-						<tr><td align="left" valign=middle><img src="images/search.gif" style="float:left;margin-bottom:5px;margin-right:0;padding-right:0"><h3 style="float:left;padding-left:0;line-height: 18px;margin-left:10px;">Search Results</h3></td><td align="right" class="blue_txt"> <!-- DOESNT WORK<a href="search_result.php?or=a">Alphabatically</a> | <a href="search_result.php">Recent Essays</a> --><br /><br /></td></tr>
-
+		<div id="main">
+           <div id="subheading">Search Results</div>
+<!-- DOESNT WORK<a href="search_result.php?or=a">Alphabatically</a> | <a href="search_result.php">Recent Essays</a> --><br /><br /></td></tr>
 						<?php 
 							if($_POST['search_text'])
 							{ 
@@ -65,7 +63,7 @@ require_once("config/functions.inc.php");
 								$bgcolor=="#D6EAF3"?$bgcolor="#ffffff":$bgcolor="#D6EAF3";
 								?>
 							
-								<tr style="background:<?=$bgcolor?>;">
+								<tr>
 								<td colspan=2 style="padding:10px">
 								<a href="document_detail.php?doc_id=<?=$line[id]?>" style="font-size:12px"><?php echo $line[doc_title];?></a><br>
                         <div style="float:left">
@@ -87,15 +85,13 @@ require_once("config/functions.inc.php");
 							{
 						?>
 						<tr align="center">
-						<td class="warning">No Results Found Matching Your Search Keyword</td>
+						<td class="warning">no essays to show, yet</td>
 						</tr>
 						<?php }?>
 						
 						</table>
 				  </div>
 
-<br><br>
-<iframe src="http://www.facebook.com/plugins/like.php?href=www.essayjudge.com&amp;send=true&amp;layout=standard&amp;width=450&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font=verdana&amp;height=35" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:35px;" allowTransparency="true"></iframe>
 <br>
 <br>
       <?php include("footer.inc.php")?>

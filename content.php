@@ -1,3 +1,4 @@
+//another non-used page??
 <?php 
 include("config/config.inc.php");
 include("config/functions.inc.php");

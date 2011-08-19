@@ -26,10 +26,10 @@ require_once("config/functions.inc.php");
    <div class="container">
       <?php include("header.inc.php")?>
 
-            <div style="border: 1px #999999 solid;margin-top:14px;margin-bottom:14px;width:602px">
-				   <table style="padding:10px;width:600px;border-spacing:0px;color:#5C6A72;">
+            <div id="main">
+				   <table style="padding:10px;">
 						<tr><td align="left" valign=top><?php $get_user_name=mysql_fetch_array(mysql_query("select username from tbl_user where id=".$_GET[user_id]));?>
-                  <h3 style="line-height: 18px;text-align:left;margin-left:20px;">Comments by <?php echo ucfirst($get_user_name[0]);?></h3></td><td align="right" class="blue_txt"></td>
+                  <div id="subheading">Comments by: <?php echo ucfirst($get_user_name[0]);?></div></td><td align="right" class="blue_txt"></td>
                   </tr>
 
 						<?php 
@@ -49,7 +49,7 @@ $reccnt=mysql_num_rows(mysql_query("select tbl_comment.*,date_format(comment_dat
 							{
 							$bgcolor=="#D6EAF3"?$bgcolor="#ffffff":$bgcolor="#D6EAF3";
 							?>
-							<tr style="background:<?=$bgcolor?>;">
+							<tr>
 							<td colspan=2 style="padding:10px">
                      <?php $sql_username=mysql_query("select username from tbl_user where id='".$line['comment_by_id']."'");
 							$post_by=mysql_fetch_array($sql_username);?>
@@ -75,7 +75,7 @@ $reccnt=mysql_num_rows(mysql_query("select tbl_comment.*,date_format(comment_dat
 							{
 						?>
 						<tr align="center">
-						<td class="warning">No Comments for this User</td>
+						<td class="warning">no comments yet</td>
 						</tr>
 						<?php }?>
 						

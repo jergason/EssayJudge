@@ -1,3 +1,4 @@
+//admin page, no design done here
 <?
 session_start();
 require_once("config/config.inc.php");

@@ -1,8 +1,4 @@
-
-<div style="margin-left:16px;margin-right:16px;background: url(/images/menubot.jpg) 0 0 no-repeat;padding:3px;">
-Get information about plagiarism and <a href="no-plagiarism.php">Our Plagiarism Policy</a><br><br>
-Please send questions, comments or site feedback to <a href="mailto:admin@essayjudge.com">Admin@EssayJudge.com</a><br />
-   <a href="http://www.essayjudge.com/sitemap.php">Site Map</a>
+<div id="footer">
+Please read <a href="no-plagiarism.php">our plagiarism policy</a><br><br>
+We wish you success in your writing! If you have any questions, comments or suggestions, please send us an email at <a href="mailto:admin@essayjudge.com">Admin@EssayJudge.com</a><br />
 </div>
-
-</div></div></div></div>

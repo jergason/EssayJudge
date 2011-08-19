@@ -174,44 +174,26 @@ _gaq.push(['_trackPageview']);
 
 </script>
 </head>
-
+                  
 <body>
    <div class="container">
       <?php include("header.inc.php")?>
-</center>
+	<div id="main">
 
-<center><div style="width:720px;background-color:#D6EAF3;border: 1px #999999 solid;color:#5C6A72;margin-bottom:0px;font-size:15px;font-weight:bold;padding:2px;">
-
-<br><big>New: Have Your Essay Reviewed by an Expert for Free</big>
-<br> <br>
-<a href="http://www.essayjudge.com"><font size="4">Click Here to Get Started!</font></a>
-<br>
-<br>
-Please click Like to share with other students <br><br> <iframe src="http://www.facebook.com/plugins/like.php?href=www.essayjudge.com&amp;send=true&amp;layout=standard&amp;width=450&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font=verdana&amp;height=35" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:35px;" allowTransparency="true"></iframe><br>
-</div></center>
-<br>
-      <table class="content">
-         <tr>
-            <td></center>
-
-<br>
-<br>   
-<center>
-<span class="essayTitle"><?php echo htmlentities(ucwords($line[doc_title]));?></span></center>
+<div id="subheading"> <?php echo ucwords($line[doc_title]);?></div>
 <br />
 
 <br>
 <br>
-            <div class="essaydisp"><div class="essaycont"><?php echo nl2br(htmlentities(($line['doc_content'])));?>
 
-<br><br><center><small>Submitted by:</small><span class="essayAuthor"><?php echo htmlentities($line['username']);?></span></center>
-               <?php $authorname = $line['username']; $authorid = $line['user_id']; ?>
-              </div></div>
-                  <br /><div style="margin-left:20px"><a href="javascript:void(0);" style="text-decoration:none;text-style:oblique" onClick="open_post_form('k_list');">&lt;Keywords&gt;</a><span id="k_list" style="display:none">&nbsp;&nbsp;&nbsp;<?php echo htmlentities($line['keywords']);?></span></div>
-                  <br />
+<?php echo nl2br(nl2br($line[doc_content]));?>
 
-<iframe src="http://www.facebook.com/plugins/like.php?href=www.essayjudge.com&amp;send=true&amp;layout=standard&amp;width=450&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font=verdana&amp;height=35" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:35px;" allowTransparency="true"></iframe>
-
+<br><br>Submitted by:<?php echo $line[username];?>
+<br>
+<br>
+<? $authorname = $line[username]; $authorid = $line[user_id]; ?>
+<a href="javascript:void(0);" style="text-decoration:none;text-style:oblique" onClick="open_post_form('k_list');">Tagged...</a><span id="k_list" style="display:none"><?php echo $line[keywords]?></span>
+</div>
 <br>
 <!--COMMENTS BOX START-->
 <?php 
@@ -234,14 +216,15 @@ $reccnt=mysql_num_rows($sql);
 <?php }
 else
 {?>
-<h3>Comments</h3>
-<table class="comments" style="border:1px solid #666666">
+<div id="sidebar">
+<div id="topdoc">Comments</div>
+<table class="comments">
 <?php for($k = 0; $line=mysql_fetch_array($sql); $k++)
 {
 ?>
 <!--ONE MSG BEGINS-->
                   <tr>
-                     <td class="commentUser" style="text-align:center;background-color:<?php if($k%2==0){echo '#F2F2F2';}else{echo '#D2D2D2';}?>;padding-top:7px;border-bottom:1px solid #666666;border-right:1px solid #666666" rowspan=2>
+                     <td class="commentUser" style="text-align:center;padding-top:7px;" rowspan=2>
 <?php if ($authorid==$line[user_id]){ ?>
 <i>Author:</i><br>
 <?php } ?>
@@ -256,14 +239,14 @@ $rs_comment=mysql_fetch_array($sql_comment);?>
 
                         <br /><span style="font-weight:bolder;font-style:italic;margin-left:-25px;font-size:10px">Member Since</span><div class="bgstatspace nodec" style="font-size:10px;margin-left:5px;font-style:italic"><?php echo $line['join_date'] ?></div>
                      </td>
-                     <td class="commentMsg" style="padding:5px;background-color:<?php if($k%2==0){echo '#F2F2F2';}else{echo '#D2D2D2';}?>;font-size:10px;">
+                     <td class="commentMsg" style="padding:5px;font-size:10px;">
                         <?php echo nl2br(htmlentities(ucfirst($line['comment'])));?>
                      </td>
                   </tr>
                   <tr>
-                     <td style="padding:5px;vertical-align:bottom;background-color:<?php if($k%2==0){echo '#F2F2F2';}else{echo '#D2D2D2';}?>;font-size:10px;border-bottom:1px solid #666666">
+                     <td style="padding:5px;vertical-align:bottom;font-size:10px;">
                      <div style="float:right;font-style:italic"><?php echo $line['comment_date'];?></div><br/>
-                     <div style="background-color:#666666;height:1px;width:99.999%;"></div>
+                     <div style="height:1px;width:99.999%;"></div>
 
 <?php if ($authorid!=$line['user_id']){ ?>
 <?php if ($line['user_id']!=$_SESSION['uid']){ ?>
@@ -316,7 +299,7 @@ if($result['status']==1){?>
    </tr>
 </table>
 
-
+</div>
 <?php } ?>
 
 </td>
@@ -326,21 +309,6 @@ if($result['status']==1){?>
 <br><br><br><br><br><br><br><br>
 <br><br><br><br><br><br><br><br>
 
-
-<div style="width:160px;background-color:#D6EAF3;border: 1px #999999 solid;color:#5C6A72;margin-bottom:0px;font-size:18px;font-weight:bold;padding:2px;">
-<center>
-<br>Post Your Essay<br><br>on<br><br><br>
-<a href="http://www.essayjudge.com"><font size="3">EssayJudge.Com</font></a> <br><br><br><br>And get a<br><br>Free Essay Review<br><br>
-from an expert<br><br>
-<a href="http://www.essayjudge.com/register.php"><font size="4">Get Started Now!</font></a> <br><br><br>
-It's Free. <br><br>It's Easy. <br><br>It Helps.
-<br><br>
-<br>
-</center>
-</div> 
-
-
-<br><br><br><br><br><br><br><br>
 
 <!--
                <div class="essayinfo">
@@ -415,8 +383,6 @@ if($rs_comment['score']>0) { echo "+".htmlentities($rs_comment['score']); } else
                    </td>
                    </tr>
                    </table>
-                   <iframe src="http://www.facebook.com/plugins/like.php?href=www.essayjudge.com&amp;send=true&amp;layout=standard&amp;width=450&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font=verdana&amp;height=35" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:35px;" allowTransparency="true"></iframe>
-
                    <br>
                    <?php include("footer.inc.php")?>
                    </div>

@@ -26,14 +26,8 @@ require_once("config/functions.inc.php");
 <body>
    <div class="container">
       <?php include("header.inc.php")?>
-
-            <div style="border: 1px #999999 solid;margin-top:14px;margin-bottom:14px;width:602px">
-				   <table style="padding:10px;width:600px;border-spacing:0px;color:#5C6A72;">
-						<tr style="background:#D6EAF3;">
-                     <td style="padding:10px">
-
-
-
+		<div id="main">
+      
                   <?php 
 								if(isset($_GET['order_by'])) $order_by=$_GET['order_by'];
 								$result1=mysql_query("select tbl_document.id,tbl_document.doc_title, avg( distinct tbl_rating.score) as avg_score, date_format(tbl_document.post_date,'%M %e, %Y') as post_date,tbl_user.username,count(tbl_comment.id) as comment_rec from tbl_document inner join tbl_user on (tbl_document.posted_by=tbl_user.id) left join tbl_rating on (tbl_document.id=tbl_rating.document_id) left join tbl_comment on (tbl_document.id=tbl_comment.doc_id) where tbl_document.status=1 $where group by tbl_document.id order by tbl_document.post_date desc");
@@ -48,9 +42,6 @@ require_once("config/functions.inc.php");
                         <? } 
                      } ?>
 
-                     </td>
-                  </tr>
-               </table>
             </div>
       <?php include("footer.inc.php")?>
    </div>
