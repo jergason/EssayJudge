@@ -27,7 +27,7 @@ require_once("config/functions.inc.php");
    <div class="container">
       <?php include("header.inc.php")?>
 		<div id="main">
-           <div id="subheading">Search Results</div>
+           <div id="subheading">All Essays</div>
 <!-- DOESNT WORK<a href="search_result.php?or=a">Alphabatically</a> | <a href="search_result.php">Recent Essays</a> --><br /><br /></td></tr>
 						<?php 
 							if($_POST['search_text'])
@@ -62,21 +62,16 @@ require_once("config/functions.inc.php");
 								{
 								$bgcolor=="#D6EAF3"?$bgcolor="#ffffff":$bgcolor="#D6EAF3";
 								?>
-							
-								<tr>
-								<td colspan=2 style="padding:10px">
-								<a href="document_detail.php?doc_id=<?=$line[id]?>" style="font-size:12px"><?php echo $line[doc_title];?></a><br>
-                        <div style="float:left">
-   								<span class="black_txt"><strong>Posted By:</strong></span>&nbsp;<span class="black_txt"><?php echo ucwords($line[username]);?></span><br>
-								   <span class="black_txt"><strong>Posted On:</strong></span>&nbsp;<span class="black_txt"><?php echo ucwords($line[post_date]);?></span>
-                        </div>
-                        <div style="float:right;margin-right:150px;">
-                           
-   								<span class="black_txt"><strong>Comments:</strong></span>&nbsp;<span class="black_txt"><?php echo ucwords($line[comment_rec]);?></span>
-                        </div>
-							
-								</td>
-								</tr>
+
+<a href="document_detail.php?doc_id=<?=$line[id]?>" style="font-size:12px"><?php echo $line[doc_title];?></a><br>
+<strong>Posted By:</strong><?php echo ucwords($line[username]);?>
+<br>
+<strong>Posted On:</strong><?php echo ucwords($line[post_date]);?>
+<br>
+<strong>Comments:</strong><?php echo ucwords($line[comment_rec]);?>
+<br>
+<br>
+<br>
 							<?php 
 								} ?>
 							<tr><td colspan=2 width="50%"  align="center"><?php include("config/paging.inc.php"); ?></td></tr>

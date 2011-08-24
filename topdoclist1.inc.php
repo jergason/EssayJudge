@@ -18,9 +18,9 @@ $res_new_doc=mysql_query("select id,doc_title,posted_by,date_format(post_date,'%
 while($line_new_doc=mysql_fetch_array($res_new_doc))
 {
 ?>
-<div id="essaytitle"><a href="document_detail.php?doc_id=<?=$line_new_doc[id]?>"<?php echo ucwords($line_new_doc[doc_title]);?></a>
-<br>
+<div id="essaytitle"><a href="document_detail.php?doc_id=<?=$line_new_doc[id]?>"><?php echo ucwords($line_new_doc[doc_title]);?></a></div>
 <div id="date"><?php echo $line_new_doc[post_date];?></div>
 <?php }
 ?>
+<br>
 </div>

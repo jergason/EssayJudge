@@ -44,6 +44,8 @@ $j=intval($j);
       <?
 		}
 ?> </td> 
+<br><br><br><br>
+
     <td align="center" height="20"> <span > 
       <?
 	if($start+$pagesize < $reccnt){
